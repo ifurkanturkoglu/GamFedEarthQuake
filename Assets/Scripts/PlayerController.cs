@@ -6,8 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     Animator animator;
     Camera mainCamera;
+    public GameObject firstKitBag;
     [SerializeField] float rotationSpeed;
     public bool isCrouch;
+    public bool fKeyIsPush;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.F)){
             animator.SetTrigger("isPickUp");
+            
         }
     }
     private void Movement()
@@ -33,6 +36,12 @@ public class PlayerController : MonoBehaviour
         transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, yawCamera, 0), rotationSpeed * Time.deltaTime);
         
         animator.SetFloat("speed", directionInput.magnitude);
+    }
+    void fPress(){
+        fKeyIsPush = true;
+    }
+    void fDontPress(){
+        fKeyIsPush = false;
     }
     void OnTriggerEnter(Collider other)
     {

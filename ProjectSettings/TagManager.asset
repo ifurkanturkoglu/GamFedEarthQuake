@@ -19,6 +19,7 @@ TagManager:
   - fener
   - gida
   - LastScene
+  - tik
   layers:
   - Default
   - TransparentFX

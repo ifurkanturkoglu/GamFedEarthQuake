@@ -10,6 +10,7 @@ public class Earthquake : MonoBehaviour
     [SerializeField]float timer = 20;
     [SerializeField] AudioSource audioSource;
     [SerializeField]public static bool earthquakeIsStart;
+    float earthquakeCount =0;
     
 
     void Start()
@@ -21,7 +22,8 @@ public class Earthquake : MonoBehaviour
 
     void Update()
     {
-        if(EarthquakeBag.qitFinish && !earthquakeIsStart){
+        if(EarthquakeBag.qitFinish && !earthquakeIsStart && earthquakeCount==0){
+            earthquakeCount =1;
             playable.Play();
         }
         if (timer >= 0)
