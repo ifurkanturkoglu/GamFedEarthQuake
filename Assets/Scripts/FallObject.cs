@@ -15,7 +15,7 @@ public class FallObject : MonoBehaviour
     void Update()
     {
         bool a = Earthquake.earthquakeIsStart;
-        if(a && timer<=3 && !isFall ){
+        if(a && timer<=20 && !isFall ){
             timer +=Time.deltaTime;
             int random = Random.Range(0,4);
             switch (random)
@@ -33,7 +33,7 @@ public class FallObject : MonoBehaviour
                     direction = transform.right*-1;
                     break;
             }
-            float force = Random.Range(350,1000);
+            float force = Random.Range(800,1000);
             rb.AddForce(direction*Time.deltaTime*force,ForceMode.Acceleration);
         }
         else if(timer>3){

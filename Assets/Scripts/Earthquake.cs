@@ -15,7 +15,7 @@ public class Earthquake : MonoBehaviour
     void Start()
     {
         fallObjects = GameObject.FindGameObjectsWithTag("fallObject");
-        StartCoroutine(EarthQuakeTimer());
+        
     }
 
 
@@ -23,6 +23,7 @@ public class Earthquake : MonoBehaviour
     {
         if(EarthquakeBag.qitFinish && !earthquakeIsStart && earthquakeCount==0){
             earthquakeCount =1;
+            StartCoroutine(EarthQuakeTimer());
             playable.Play();
         }
         if (earthquakeIsStart)
@@ -37,7 +38,7 @@ public class Earthquake : MonoBehaviour
         {
             int random = Random.Range(0, fallObjects.Length);
             fallObjects[random].GetComponent<FallObject>().fall();
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.1f);
         }
     }
 }

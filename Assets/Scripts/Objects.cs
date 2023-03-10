@@ -22,7 +22,7 @@ public class Objects : MonoBehaviour
 
     private void Update()
     {
-        if (takingObjectCount < 30)
+        if (takingObjectCount <10)
         {
             isTakeAllObjects = true;
         }

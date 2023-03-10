@@ -24,6 +24,7 @@ public class TakeableObjects : MonoBehaviour, ITakeable
         {
             if(objects.tiks[i].name == gameObject.name){
                 objects.tiks[i].transform.GetChild(0).gameObject.SetActive(true);
+                Objects.takingObjectCount++;
                 Destroy(gameObject);
             }
         }
