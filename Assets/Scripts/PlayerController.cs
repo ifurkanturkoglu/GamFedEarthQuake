@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     Camera mainCamera;
     public GameObject firstKitBag;
     [SerializeField] float rotationSpeed;
+    TakeableObjects takeableObjects;
     public bool isCrouch;
     public bool fKeyIsPush;
     void Start()
@@ -22,9 +23,8 @@ public class PlayerController : MonoBehaviour
             isCrouch = !isCrouch;
             animator.SetBool("isCrouch",isCrouch);
         }
-        if(Input.GetKeyDown(KeyCode.F)){
+        if(Input.GetKeyDown(KeyCode.F) && takeableObjects !=null && takeableObjects.IsArea ){
             animator.SetTrigger("isPickUp");
-            
         }
     }
     private void Movement()
@@ -48,5 +48,18 @@ public class PlayerController : MonoBehaviour
         if(EarthquakeBag.qitFinish && !Earthquake.earthquakeIsStart && other.gameObject.tag.Equals("LastScene")){
            SceneManager.LoadScene(2);
         }
+        
+    }
+    void OnTriggerStay(Collider other)
+    {
+        if(other.gameObject.GetComponent<ITakeable>()!=null){
+            takeableObjects = other.gameObject.GetComponent<TakeableObjects>();
+            takeableObjects.IsArea = true;
+        }
+    }
+    void OnTriggerExit(Collider other)
+    {
+        if(takeableObjects!=null)
+            takeableObjects.IsArea = false;
     }
 }

@@ -7,8 +7,7 @@ public class Earthquake : MonoBehaviour
 {
     [SerializeField] PlayableDirector playable;
     [SerializeField] GameObject[] fallObjects;
-    [SerializeField]float timer = 20;
-    [SerializeField] AudioSource audioSource;
+    public static float timer = 20;
     [SerializeField]public static bool earthquakeIsStart;
     float earthquakeCount =0;
     
@@ -26,12 +25,9 @@ public class Earthquake : MonoBehaviour
             earthquakeCount =1;
             playable.Play();
         }
-        if (timer >= 0)
+        if (earthquakeIsStart)
         {
             timer -= Time.deltaTime;
-        }
-        if(earthquakeIsStart){
-            audioSource.Stop();
         }
 
     }

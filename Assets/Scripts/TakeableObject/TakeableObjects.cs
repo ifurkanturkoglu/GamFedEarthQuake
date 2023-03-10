@@ -6,12 +6,12 @@ public class TakeableObjects : MonoBehaviour, ITakeable
 {
     Objects objects;
     PlayerController controller;
+    public bool IsArea;
     void Start()
     {
         objects = GameObject.FindObjectOfType<Objects>();
         controller = GameObject.FindObjectOfType<PlayerController>();
     }
-
     void OnTriggerStay(Collider other)
     {
         if(controller.fKeyIsPush&& other.gameObject.name.Equals(controller.firstKitBag.name)){
@@ -27,6 +27,6 @@ public class TakeableObjects : MonoBehaviour, ITakeable
                 Destroy(gameObject);
             }
         }
-        
+        AudioManager.Instance.playOneShotAudioClip("itemPickUp");
     }
 }
