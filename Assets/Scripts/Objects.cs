@@ -9,28 +9,28 @@ public class Objects : MonoBehaviour
     public GameObject[] tiks;
     public static bool isTakeAllObjects;
     public static int takingObjectCount = 0;
-    
+    bool tabMenuIsOpen;
+
 
     private void Awake()
     {
-        
+
         image.SetActive(false);
     }
-    
+
     private void Update()
     {
-        
+
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            image.gameObject.SetActive(true);
+            tabMenuIsOpen = !tabMenuIsOpen;
+            image.SetActive(tabMenuIsOpen);
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+
+        if (takingObjectCount < 30)
         {
-            image.gameObject.SetActive(false);
+            isTakeAllObjects = true;
         }
-       if(takingObjectCount <30 ){
-        isTakeAllObjects = true;
-       }
     }
-    
+
 }
