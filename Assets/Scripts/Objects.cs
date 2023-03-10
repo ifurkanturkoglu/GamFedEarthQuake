@@ -5,28 +5,23 @@ using UnityEngine.UI;
 
 public class Objects : MonoBehaviour
 {
-    [SerializeField] private GameObject image;
+    public static GameObject image;
     public GameObject[] tiks;
     public static bool isTakeAllObjects;
     public static int takingObjectCount = 0;
-    bool tabMenuIsOpen;
+    public static bool tabMenuIsOpen;
 
-
-    private void Awake()
+    void Awake()
     {
-
+        image = GameObject.Find("Inventory");
+    }
+    void Start()
+    {
         image.SetActive(false);
     }
 
     private void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            tabMenuIsOpen = !tabMenuIsOpen;
-            image.SetActive(tabMenuIsOpen);
-        }
-
         if (takingObjectCount < 30)
         {
             isTakeAllObjects = true;

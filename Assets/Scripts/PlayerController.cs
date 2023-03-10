@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]AudioManager _audioManager;
     Animator animator;
     Camera mainCamera;
     public GameObject firstKitBag;
@@ -19,6 +20,12 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Movement();
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            _audioManager.playOneShotAudioClip("tab");
+            Objects.tabMenuIsOpen = !Objects.tabMenuIsOpen;
+            Objects.image.SetActive(Objects.tabMenuIsOpen);
+        }
         if(Input.GetKeyDown(KeyCode.LeftControl)){
             isCrouch = !isCrouch;
             animator.SetBool("isCrouch",isCrouch);

@@ -10,7 +10,7 @@ public class AudioManager : MonoBehaviour
     bool earthquakeIsPlay;
     void Awake()
     {
-        audioSource.clip = clips.Find(a=> a.name.Equals("mainGameMusic"));
+        audioSource.clip = clips.Find(a=> a.name.Equals("InGameMusic"));
         audioSource.Play();
     }
     void Start()
@@ -22,12 +22,10 @@ public class AudioManager : MonoBehaviour
     
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F)){
-            
-        }
+        
         if(Earthquake.earthquakeIsStart &&!earthquakeIsPlay){
             earthquakeIsPlay = true;
-            StartCoroutine(earthquakeMusicTimer("deprem","mainGameMusic",Earthquake.timer));
+            StartCoroutine(earthquakeMusicTimer("deprem","InGameMusic",Earthquake.timer));
         }
     }
     public void playOneShotAudioClip(string clipName){
