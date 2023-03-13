@@ -5,12 +5,7 @@ public class MainMenuController : MonoBehaviour
 {
     [SerializeField] GameObject infoPanel;
     bool infoPanelIsOpen;
-    void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.Escape)){
-            InfoPanel();
-        }
-    }
+    
     public void GamaStart(){
         SceneManager.LoadScene(1);
     }
