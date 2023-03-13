@@ -362,7 +362,7 @@ GameObject:
   - component: {fileID: 19801017}
   - component: {fileID: 19801018}
   m_Layer: 5
-  m_Name: Text (Legacy)
+  m_Name: Danger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6268,7 +6268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 1318134056}
-  dangerText: {fileID: 0}
+  dangerText: {fileID: 19801019}
 --- !u!114 &795258860
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -7,11 +7,17 @@ public class Settings : MonoBehaviour
 {
     [SerializeField] Slider sfx,music;
     [SerializeField] AudioMixer audioMixer;
-    void Start()
+    [SerializeField] GameObject settingsParents;
+    void Awake()
     {
-        music.value = (music.maxValue+music.minValue)/2;
-        sfx.value = (sfx.maxValue + sfx.minValue)/2;
         DontDestroyOnLoad(this.gameObject);
+        
+    }
+    private void Start()
+    {
+        music.value = (music.maxValue + music.minValue) / 2;
+        sfx.value = (sfx.maxValue + sfx.minValue) / 2;
+        gameObject.SetActive(false);
     }
     public void sfxEdit(){
         audioMixer.SetFloat("sfx",sfx.value);

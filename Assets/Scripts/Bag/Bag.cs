@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 public class Bag : MonoBehaviour
 {
     [SerializeField]PlayerController playerController;
-    [SerializeField]Text dangerText;
+    [SerializeField]TextMeshProUGUI dangerText;
     bool playerIsSafe;
     void Update()
     {
