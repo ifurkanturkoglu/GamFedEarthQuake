@@ -3,9 +3,15 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] GameObject infoPanel;
-    bool infoPanelIsOpen;
+    public static MainMenuController Instance;
+    [SerializeField] GameObject infoPanel, settingsPanel;
+
+    bool infoPanelIsOpen,settingsPanelIsOpen;
     
+    void Start()
+    {
+        Instance = this;
+    }
     public void GamaStart(){
         SceneManager.LoadScene(1);
     }
@@ -15,5 +21,9 @@ public class MainMenuController : MonoBehaviour
     public void InfoPanel(){
         infoPanelIsOpen = !infoPanelIsOpen;
         infoPanel.SetActive(infoPanelIsOpen);
+    }
+    public void SettingsPanel(){
+        settingsPanelIsOpen = !settingsPanelIsOpen;
+        settingsPanel.SetActive(settingsPanelIsOpen);
     }
 }

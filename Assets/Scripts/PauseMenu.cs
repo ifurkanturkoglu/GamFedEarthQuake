@@ -20,7 +20,9 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(0);
         Time.timeScale = 1.0f;
     }
-    
+    public void SettingsOpenClose(){
+        MainMenuController.Instance.SettingsPanel();
+    }
     public void BackToGame()
     {
         Pause();

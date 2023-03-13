@@ -7,7 +7,6 @@ public class Settings : MonoBehaviour
 {
     [SerializeField] Slider sfx,music;
     [SerializeField] AudioMixer audioMixer;
-    [SerializeField] GameObject settingsParents;
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
