@@ -5,12 +5,19 @@ using UnityEngine.UI;
 using UnityEngine.Audio;
 public class Settings : MonoBehaviour
 {
-    [SerializeField] Slider sfx,music;
+    public static Settings instance;
+    [SerializeField] Slider sfx, music;
     [SerializeField] AudioMixer audioMixer;
+
+    [SerializeField] GameObject settingsPanel;
+
+    bool settingsPanelIsOpen;
+
     void Awake()
     {
+        instance = this;
         DontDestroyOnLoad(this.gameObject);
-        
+
     }
     private void Start()
     {
@@ -18,11 +25,17 @@ public class Settings : MonoBehaviour
         sfx.value = (sfx.maxValue + sfx.minValue) / 2;
         gameObject.SetActive(false);
     }
-    public void sfxEdit(){
-        audioMixer.SetFloat("sfx",sfx.value);
+    public void sfxEdit()
+    {
+        audioMixer.SetFloat("sfx", sfx.value);
     }
-    public void musicEdit(){
-         audioMixer.SetFloat("music",music.value);
+    public void musicEdit()
+    {
+        audioMixer.SetFloat("music", music.value);
     }
-    
+    public void SettingsPanel()
+    {
+        settingsPanelIsOpen = !settingsPanelIsOpen;
+        settingsPanel.SetActive(settingsPanelIsOpen);
+    }
 }

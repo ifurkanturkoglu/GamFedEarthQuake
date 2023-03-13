@@ -33,31 +33,31 @@ namespace UnityStandardAssets.Cameras
         {
             base.Awake();
             // Lock or unlock the cursor.
-            Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
-            Cursor.visible = !m_LockCursor;
-			m_PivotEulers = m_Pivot.rotation.eulerAngles;
+            //Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
+            //Cursor.visible = !m_LockCursor;
+            m_PivotEulers = m_Pivot.rotation.eulerAngles;
 
-	        m_PivotTargetRot = m_Pivot.transform.localRotation;
-			m_TransformTargetRot = transform.localRotation;
+            m_PivotTargetRot = m_Pivot.transform.localRotation;
+            m_TransformTargetRot = transform.localRotation;
         }
 
 
         protected void Update()
         {
             HandleRotationMovement();
-            if (m_LockCursor && Input.GetMouseButtonUp(0))
-            {
-                Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
-                Cursor.visible = !m_LockCursor;
-            }
+            //if (m_LockCursor && Input.GetMouseButtonUp(0))
+            //{
+            //    Cursor.lockState = m_LockCursor ? CursorLockMode.Locked : CursorLockMode.None;
+            //    Cursor.visible = !m_LockCursor;
+            //}
         }
 
 
-        private void OnDisable()
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
+        //     private void OnDisable()
+        //     {
+        //         Cursor.lockState = CursorLockMode.None;
+        //         Cursor.visible = true;
+        //     }
 
 
         protected override void FollowTarget(float deltaTime)

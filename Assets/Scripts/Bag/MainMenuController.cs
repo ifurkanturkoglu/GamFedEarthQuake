@@ -4,9 +4,9 @@ using UnityEngine.UI;
 public class MainMenuController : MonoBehaviour
 {
     public static MainMenuController Instance;
-    [SerializeField] GameObject infoPanel, settingsPanel;
+    [SerializeField] GameObject infoPanel;
 
-    bool infoPanelIsOpen,settingsPanelIsOpen;
+    bool infoPanelIsOpen;
     
     void Start()
     {
@@ -21,9 +21,5 @@ public class MainMenuController : MonoBehaviour
     public void InfoPanel(){
         infoPanelIsOpen = !infoPanelIsOpen;
         infoPanel.SetActive(infoPanelIsOpen);
-    }
-    public void SettingsPanel(){
-        settingsPanelIsOpen = !settingsPanelIsOpen;
-        settingsPanel.SetActive(settingsPanelIsOpen);
     }
 }

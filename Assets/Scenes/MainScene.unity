@@ -326,7 +326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   infoPanel: {fileID: 767511704}
-  settingsPanel: {fileID: 2071267963}
 --- !u!1 &207998472
 GameObject:
   m_ObjectHideFlags: 0
@@ -2142,8 +2141,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 202221018}
-        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+      - m_Target: {fileID: 2071267964}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: SettingsPanel
         m_Mode: 1
         m_Arguments:
@@ -2452,8 +2451,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 202221018}
-        m_TargetAssemblyTypeName: MainMenuController, Assembly-CSharp
+      - m_Target: {fileID: 2071267964}
+        m_TargetAssemblyTypeName: Settings, Assembly-CSharp
         m_MethodName: SettingsPanel
         m_Mode: 1
         m_Arguments:
@@ -4591,6 +4590,7 @@ MonoBehaviour:
   sfx: {fileID: 736114880}
   music: {fileID: 1965670877}
   audioMixer: {fileID: 24100000, guid: 33153cb43fc0d0c4c911cbdc8315628d, type: 2}
+  settingsPanel: {fileID: 2071267963}
 --- !u!114 &2071267965
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenuPanel;
-    
+    private void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -14,26 +17,27 @@ public class PauseMenu : MonoBehaviour
             Pause();
         }
     }
-    
+
     public void MainMenu()
     {
         SceneManager.LoadScene(0);
         Time.timeScale = 1.0f;
     }
-    public void SettingsOpenClose(){
-        MainMenuController.Instance.SettingsPanel();
+    public void SettingsOpenClose()
+    {
+        Settings.instance.SettingsPanel();
     }
     public void BackToGame()
     {
         Pause();
         Time.timeScale = 1.0f;
     }
-    
+
     public void Pause()
     {
         bool isPaused = !pauseMenuPanel.activeSelf;
         pauseMenuPanel.SetActive(isPaused);
-        
+
         if (isPaused)
         {
             Cursor.lockState = CursorLockMode.None;
