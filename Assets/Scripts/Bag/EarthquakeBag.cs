@@ -14,7 +14,7 @@ public class EarthquakeBag : MonoBehaviour
 
     void Update()
     {
-        if( Objects.isTakeAllObjects && !qitFinish &&currentPlaceablePlace  && Input.GetKeyDown(KeyCode.F)){
+        if( Objects.isTakeAllObjects &&Objects.isTakeAllObjects && !qitFinish &&currentPlaceablePlace  && Input.GetKeyDown(KeyCode.F)){
             bag.transform.parent = putBagPosition;
             bag.transform.position = putBagPosition.position;
             Color currentPlaceableColor = currentPlaceablePlace.GetComponent<Renderer>().material.color;
@@ -23,6 +23,7 @@ public class EarthquakeBag : MonoBehaviour
             currentPlaceablePlace.GetComponent<Renderer>().material.color = currentPlaceableColor;
             if(placeableIsActive){
                 qitFinish = true;
+                Objects.takingObjectCount = 0;
             }
         }
     }

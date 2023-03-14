@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     TakeableObjects takeableObjects;
     public bool isCrouch;
     public bool fKeyIsPush;
+    public static bool safeZone;
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -52,8 +53,10 @@ public class PlayerController : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(EarthquakeBag.qitFinish && !Earthquake.earthquakeIsStart && other.gameObject.tag.Equals("LastScene")){
-           SceneManager.LoadScene(2);
+        if(Bag.bagIsTake && !Earthquake.earthquakeIsStart && other.gameObject.tag.Equals("LastScene")){
+            safeZone = true;
+            Missions.Instance.missionUpdate(4);
+            SceneManager.LoadScene(2);
         }
         
     }

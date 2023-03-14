@@ -10,7 +10,8 @@ public class Earthquake : MonoBehaviour
     public static float timer = 20;
     [SerializeField]public static bool earthquakeIsStart;
     float earthquakeCount =0;
-    
+    public static bool earthquakeFinish;
+    int a = 0;
 
     void Start()
     {
@@ -29,6 +30,11 @@ public class Earthquake : MonoBehaviour
         if (earthquakeIsStart)
         {
             timer -= Time.deltaTime;
+        }
+        if(timer <=0 && a==0){
+            a=1;
+            earthquakeFinish = true;
+            Missions.Instance.missionUpdate(3);
         }
 
     }

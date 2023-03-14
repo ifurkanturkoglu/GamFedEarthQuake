@@ -7,10 +7,10 @@ public class Bag : MonoBehaviour
 {
     [SerializeField]PlayerController playerController;
     [SerializeField]TextMeshProUGUI dangerText;
-    bool playerIsSafe;
+    [SerializeField]GameObject rightHand;
+    public static bool playerIsSafe,bagIsTake;
     void Update()
     {
-        
         if(EarthquakeBag.qitFinish && playerIsSafe && playerController.isCrouch){
             dangerText.gameObject.SetActive(false);
         }
@@ -24,6 +24,13 @@ public class Bag : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
        playerIsSafe = other.gameObject.name.Equals("Player") ? true : false;
+       if(Earthquake.earthquakeFinish && other.gameObject.name.Equals("Player") && Input.GetKeyDown(KeyCode.F) && !bagIsTake){
+            transform.parent = rightHand.transform;
+            transform.localPosition = new Vector3(0,0.3f,0);
+            transform.localRotation = new Quaternion(-180,0,0,1);
+            bagIsTake = true;
+            
+       }
     }
     void OnTriggerExit(Collider other)
     {
