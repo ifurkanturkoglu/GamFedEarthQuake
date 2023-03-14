@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     Camera mainCamera;
     public GameObject firstKitBag;
     [SerializeField] float rotationSpeed;
-    TakeableObjects takeableObjects;
+    [SerializeField] GameObject takeMessage;
+    public TakeableObjects takeableObjects;
     public bool isCrouch;
     public bool fKeyIsPush;
     public static bool safeZone;
@@ -65,11 +66,16 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.GetComponent<ITakeable>()!=null){
             takeableObjects = other.gameObject.GetComponent<TakeableObjects>();
             takeableObjects.IsArea = true;
+            takeMessage.SetActive(true);
         }
     }
     void OnTriggerExit(Collider other)
     {
-        if(takeableObjects!=null)
+        if(takeableObjects!=null){
             takeableObjects.IsArea = false;
+           
+        }
+        takeMessage.SetActive(false);
+
     }
 }

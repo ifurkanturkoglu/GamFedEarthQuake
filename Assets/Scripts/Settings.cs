@@ -11,7 +11,7 @@ public class Settings : MonoBehaviour
 
     [SerializeField] GameObject settingsPanel;
 
-    bool settingsPanelIsOpen;
+    bool settingsPanelIsOpen,isFullScreen;
 
     void Awake()
     {
@@ -41,5 +41,9 @@ public class Settings : MonoBehaviour
     {
         settingsPanelIsOpen = !settingsPanelIsOpen;
         settingsPanel.SetActive(settingsPanelIsOpen);
+    }
+    public void FullScreen(){
+        isFullScreen = !isFullScreen;
+        Screen.fullScreen = isFullScreen;
     }
 }
