@@ -23,6 +23,7 @@ public class Settings : MonoBehaviour
     {
         music.value = (music.maxValue + music.minValue) / 2;
         sfx.value = (sfx.maxValue + sfx.minValue) / 2;
+        master.value = (master.maxValue + master.minValue) / 2;
         gameObject.SetActive(false);
     }
     public void masterEdit(){
