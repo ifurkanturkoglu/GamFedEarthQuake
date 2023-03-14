@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 public class Settings : MonoBehaviour
 {
     public static Settings instance;
-    [SerializeField] Slider sfx, music;
+    [SerializeField] Slider sfx, music,master;
     [SerializeField] AudioMixer audioMixer;
 
     [SerializeField] GameObject settingsPanel;
@@ -24,6 +24,9 @@ public class Settings : MonoBehaviour
         music.value = (music.maxValue + music.minValue) / 2;
         sfx.value = (sfx.maxValue + sfx.minValue) / 2;
         gameObject.SetActive(false);
+    }
+    public void masterEdit(){
+        audioMixer.SetFloat("master", master.value);
     }
     public void sfxEdit()
     {

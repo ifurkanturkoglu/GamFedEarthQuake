@@ -5,13 +5,13 @@ using System.Linq;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioSource audioSourceMusic,audioSourceSFX;
     [SerializeField] List<AudioClip> clips;
     bool earthquakeIsPlay;
     void Awake()
     {
-        audioSource.clip = clips.Find(a=> a.name.Equals("InGameMusic"));
-        audioSource.Play();
+        audioSourceMusic.clip = clips.Find(a=> a.name.Equals("InGameMusic"));
+        audioSourceMusic.Play();
     }
     void Start()
     {
@@ -29,15 +29,15 @@ public class AudioManager : MonoBehaviour
         }
     }
     public void playOneShotAudioClip(string clipName){
-        audioSource.PlayOneShot(clips.Find(a=> a.name.Equals(clipName)));
+        audioSourceSFX.PlayOneShot(clips.Find(a=> a.name.Equals(clipName)));
     }
     IEnumerator earthquakeMusicTimer(string firstAudio,string secondAudio,float transitionTime){
-        audioSource.Pause();
-        audioSource.clip = clips.Find(a=> a.name.Equals(firstAudio));
-        audioSource.Play();
+        audioSourceMusic.Pause();
+        audioSourceMusic.clip = clips.Find(a=> a.name.Equals(firstAudio));
+        audioSourceMusic.Play();
         yield return new WaitForSeconds(transitionTime);
-        audioSource.Pause();
-        audioSource.clip = clips.Find(a=> a.name.Equals(secondAudio));
-        audioSource.Play();
+        audioSourceMusic.Pause();
+        audioSourceMusic.clip = clips.Find(a=> a.name.Equals(secondAudio));
+        audioSourceMusic.Play();
     }
 }

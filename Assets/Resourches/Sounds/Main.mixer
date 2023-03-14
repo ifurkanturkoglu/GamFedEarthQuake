@@ -1,5 +1,19 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-7153944294228596416
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: c6f8a00f6cab5194a902ee604d56070b
+  m_EffectName: Attenuation
+  m_MixLevel: bd05cdb98fdaf37438b29ec22e91e248
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
 --- !u!244 &-7055537417720773418
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -20,6 +34,25 @@ AudioMixerEffectController:
   m_SendTarget: {fileID: 0}
   m_EnableWetMix: 0
   m_Bypass: 0
+--- !u!243 &-5921883580725622084
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Music
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: d1657ea9377a84e4a9cbce877260082c
+  m_Children: []
+  m_Volume: d5dd2f9c413c97e439b994044bc10e1c
+  m_Pitch: 4fa784770ae6a524f92445534dea40e4
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -7153944294228596416}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
 --- !u!244 &-4594815192379131533
 AudioMixerEffectController:
   m_ObjectHideFlags: 3
@@ -71,6 +104,8 @@ AudioMixerController:
   m_UpdateMode: 0
   m_ExposedParameters:
   - guid: a2b3822bf01d18b4bb4ed8708e117126
+    name: master
+  - guid: d5dd2f9c413c97e439b994044bc10e1c
     name: music
   - guid: 953d47c60b05e3f40a1d0627c8af2aac
     name: sfx
@@ -78,6 +113,7 @@ AudioMixerController:
   - guids:
     - 12dcf0088a1aa78478e380816cf5521f
     - 7b310433927190b41a108eb47739d556
+    - d1657ea9377a84e4a9cbce877260082c
     name: View
   m_CurrentViewIndex: 0
   m_TargetSnapshot: {fileID: 24500006}
@@ -92,6 +128,7 @@ AudioMixerGroupController:
   m_GroupID: 12dcf0088a1aa78478e380816cf5521f
   m_Children:
   - {fileID: -2203821030849214576}
+  - {fileID: -5921883580725622084}
   m_Volume: a2b3822bf01d18b4bb4ed8708e117126
   m_Pitch: 7f9fda6609ff81249b8b256cecbe0b5e
   m_Send: 00000000000000000000000000000000
