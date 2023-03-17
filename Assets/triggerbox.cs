@@ -4,16 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class triggerbox : MonoBehaviour
 {
-    public GameObject canvas ;
-  
     void OnTriggerEnter(Collider other)
    {
-     
-          canvas.gameObject.SetActive(true);
-     
-        
+        SceneManager.LoadScene(3);     
    }
-   
-        
-   
 }
