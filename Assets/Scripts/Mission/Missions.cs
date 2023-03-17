@@ -25,7 +25,6 @@ public class Missions : MonoBehaviour
         
     }
     public void missionUpdate(int missionQuery){
-        print("görev değişti");
         missionText.text = missions[missionQuery];
     }
 

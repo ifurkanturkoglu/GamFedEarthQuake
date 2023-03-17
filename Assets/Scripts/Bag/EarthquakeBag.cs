@@ -5,7 +5,7 @@ using System.Linq;
 
 public class EarthquakeBag : MonoBehaviour
 {
-    [SerializeField]Transform putBagPosition;
+    public Transform putBagPosition;
     [SerializeField] GameObject bag,currentPlaceablePlace;
     [SerializeField] Material placeableMaterial;
     public List<GameObject> playerColInArea;
