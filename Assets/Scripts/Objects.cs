@@ -22,7 +22,7 @@ public class Objects : MonoBehaviour
 
     private void Update()
     {
-        if (takingObjectCount < 10)
+        if (takingObjectCount == 10)
         {
             isTakeAllObjects = true;
             Missions.Instance.missionUpdate(1);

@@ -11,6 +11,7 @@ public class MainMenuController : MonoBehaviour
     void Start()
     {
         Instance = this;
+        Cursor.lockState = CursorLockMode.None;
     }
     public void GamaStart(){
         SceneManager.LoadScene(1);
