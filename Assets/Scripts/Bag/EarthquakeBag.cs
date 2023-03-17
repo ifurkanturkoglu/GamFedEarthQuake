@@ -6,6 +6,7 @@ using System.Linq;
 public class EarthquakeBag : MonoBehaviour
 {
     public Transform putBagPosition;
+    [SerializeField] PlayerController playerController;
     [SerializeField] GameObject bag,currentPlaceablePlace;
     [SerializeField] Material placeableMaterial;
     public List<GameObject> playerColInArea;
@@ -23,6 +24,7 @@ public class EarthquakeBag : MonoBehaviour
             currentPlaceablePlace.GetComponent<Renderer>().material.color = currentPlaceableColor;
             if(placeableIsActive){
                 qitFinish = true;
+                playerController.enabled = false;
                 Objects.takingObjectCount = 0;
             }
         }

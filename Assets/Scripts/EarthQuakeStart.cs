@@ -10,6 +10,7 @@ public class EarthQuakeStart : MonoBehaviour
     void Start()
     {
         Earthquake.earthquakeIsStart = true;
+        player.GetComponent<PlayerController>().enabled = true;
         Missions.Instance.missionUpdate(2);
         camera.GetComponent<CameraShake>().enabled = true;
 

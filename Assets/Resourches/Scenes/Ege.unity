@@ -10548,6 +10548,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3301678105901929684, guid: 3e13e1d48a8d55649a1ca7835340aea8, type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 1318134056}
     - target: {fileID: 3301678105901929686, guid: 3e13e1d48a8d55649a1ca7835340aea8, type: 3}
       propertyPath: m_UseGravity
       value: 1
