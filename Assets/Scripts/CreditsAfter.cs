@@ -10,7 +10,10 @@ public class CreditsAfter : MonoBehaviour
     private void Start()
     {
         missionText = GameObject.Find("MissionCanvas");
-        missionText.SetActive(false);
+        if(missionText !=null){
+            missionText.SetActive(false);
+        }
+        
     }
     public void LoadMainMenu()
     {
