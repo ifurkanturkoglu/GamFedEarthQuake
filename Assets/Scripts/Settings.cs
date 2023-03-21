@@ -15,15 +15,18 @@ public class Settings : MonoBehaviour
 
     void Awake()
     {
+        music.value = (music.maxValue + music.minValue) / 2;
+        sfx.value = (sfx.maxValue + sfx.minValue) / 2;
+        master.value = master.maxValue-0.1f;
         instance = this;
         DontDestroyOnLoad(this.gameObject);
 
     }
-    private void Start()
+
+    void Start()
     {
-        music.value = (music.maxValue + music.minValue) / 2;
-        sfx.value = (sfx.maxValue + sfx.minValue) / 2;
-        master.value = master.maxValue-0.1f;
+        masterEdit();
+        musicEdit();
         gameObject.SetActive(false);
     }
     public void masterEdit(){

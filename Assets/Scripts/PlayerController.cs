@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public bool isCrouch;
     public bool fKeyIsPush;
     public static bool safeZone;
+    //TODO envanter ağırlığına göre hareket hızı
     void Start()
     {
         animator = GetComponent<Animator>();
