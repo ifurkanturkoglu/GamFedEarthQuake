@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     //TODO envanter ağırlığına göre hareket hızı
     void Start()
     {
+        print("Deneme");
         animator = GetComponent<Animator>();
         mainCamera = Camera.main;
     }
