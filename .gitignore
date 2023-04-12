@@ -66,3 +66,11 @@ UserSettings/Layouts/CurrentMaximizeLayout.dwlt
 UserSettings/Layouts/default-2021.dwlt
 
 ProjectSettings/EditorBuildSettings.asset
+
+ProjectSettings/ProjectVersion.txt
+
+Packages/packages-lock.json
+
+Packages/manifest.json
+
+Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF - Fallback.asset
